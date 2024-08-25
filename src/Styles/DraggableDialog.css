@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "blue";
+  src: url(../assets/Bluescreen.ttf);
+}
+@font-face {
+  font-family: "up";
+  src: url(../assets/upheavtt.otf);
+}
+@font-face {
+  font-family: "fira";
+  src: url(../assets/FiraCodeNerdFont-Bold.ttf);
+}
+
+.draggable-dialog {
+  position: absolute;
+  width: fit-content;
+  background-color: #f3ff90;
+  color: #2b4d12;
+  border: 4px solid #2b4d12;
+  cursor: move;
+  font-family: "fira";
+  letter-spacing: -1px;
+  transition: transform 0.2s ease;
+}
+
+.draggable-dialog:hover:not(.dragging) {
+  transform: scale(1.1);
+}
+
+/* Add this class to handle when dragging */
+.dragging {
+  transition: none; /* Disable transition while dragging */
+  transform: scale(1.1);
+}
+
+.dialog-header {
+  background-color: #2b4d12;
+  color: #f3ff90;
+  padding: 4px;
+  padding-right: 40px;
+  font-family: up;
+  font-size: 1.2rem;
+  letter-spacing: normal;
+  overflow: hidden;
+  white-space: nowrap; /* Prevent text from wrapping */
+  position: relative; /* Ensure the text moves relative to its container */
+}
+
+.dialog-content {
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-left: 4px;
+}
+
+.marquee {
+  display: inline-block;
+  will-change: transform;
+  animation: marquee 3.2s ease-out infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
